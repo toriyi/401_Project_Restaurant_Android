@@ -1,20 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".DiscountsPage">
+
+<!--    <android.support.design.widget.BottomNavigationView-->
+<!--        xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--        xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/bottomNavigationView2"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="56dp"-->
+<!--        android:layout_gravity="start"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/frameLayout"-->
+<!--        app:menu="@menu/menu_bottom_navigation_bar" />-->
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottomNavigationView2"
         android:layout_width="0dp"
         android:layout_height="56dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
-        app:itemBackground="@color/appYellow"
         app:itemIconTint="@color/colorPrimaryDark"
         app:itemTextColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
