@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class DiscountsPage extends AppCompatActivity {
 
     BottomNavigationView navigation;
     FrameLayout frameLayout;
@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_discounts_page);
+
         navigation = findViewById(R.id.bottomNavigationView2);
         frameLayout = findViewById(R.id.frameLayout);
 
@@ -31,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
         favoritesFragment = new FavoritesFragment();
         mapPageFragment = new MapPageFragment();
         userAccountFragment = new UserAccountFragment();
-
-        InitializeFragment(discountsPageFragment);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
