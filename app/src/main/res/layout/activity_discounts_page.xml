@@ -29,6 +29,7 @@
         android:layout_marginEnd="1dp"
         android:layout_marginRight="1dp"
         android:layout_marginBottom="1dp"
+        app:itemBackground="@color/appYellow"
         app:itemIconTint="@color/colorPrimaryDark"
         app:itemTextColor="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
