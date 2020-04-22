@@ -11,10 +11,10 @@
         android:icon="@drawable/location"
         android:title="Map" />
 
-    <item
-        android:id="@+id/navigation_favoritespage"
-        android:icon="@drawable/favorite"
-        android:title="Favorite" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_favoritespage"-->
+<!--        android:icon="@drawable/favorite"-->
+<!--        android:title="Favorite" />-->
 
     <item
         android:id="@+id/navigation_useraccountpage"

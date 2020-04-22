@@ -11,11 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpMock"></activity>
+<!--        android:name="android.support.multidex.MultiDexApplication"-->
         <activity android:name=".DiscountsPage" />
-        <activity android:name=".MapPage" />
         <activity android:name=".RestaurantDiscountDispatch" />
-        <activity android:name=".UserAccount" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
