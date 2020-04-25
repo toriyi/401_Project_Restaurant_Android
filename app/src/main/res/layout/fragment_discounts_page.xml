@@ -1,107 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DiscountsPageFragment">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".DiscountsPageFragment">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                >
 
-        <ImageView
-            android:id="@+id/Search"
-            android:layout_width="92dp"
-            android:layout_height="39dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="28dp"
-            android:layout_marginRight="28dp"
-            android:src="@drawable/search"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="758dp"
+                    tools:context=".DiscountsPageFragment">
 
-        <TextView
-            android:id="@+id/DiscountsTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="130dp"
-            android:layout_marginLeft="130dp"
-            android:layout_marginTop="20dp"
-            android:text="Discounts"
-            android:textColor="#000000"
-            android:textSize="40sp"
-            app:fontFamily="@font/balthazar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/Search"
+                        android:layout_width="92dp"
+                        android:layout_height="39dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginEnd="28dp"
+                        android:layout_marginRight="28dp"
+                        android:src="@drawable/search"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/Restaurant1Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="240dp"
-            android:text="Pixie Deli"
-            android:textColor="@color/colorPrimaryDark"
-            android:textSize="24sp"
-            app:fontFamily="@font/balthazar"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/DiscountsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="130dp"
+                        android:layout_marginLeft="130dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Discounts"
+                        android:textColor="#000000"
+                        android:textSize="40sp"
+                        app:fontFamily="@font/balthazar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/Restaurant1Type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:text="American"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="normal"
-            app:fontFamily="@font/open_sans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Restaurant1Text" />
+                    <TextView
+                        android:id="@+id/Restaurant1Text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="240dp"
+                        android:text="Pixie Deli"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textSize="24sp"
+                        app:fontFamily="@font/balthazar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/Restaurant1Distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:text="0.3 mi away"
-            android:textColor="@color/colorPrimaryDark"
-            android:textStyle="normal"
-            app:fontFamily="@font/open_sans"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/Restaurant1Type" />
+                    <TextView
+                        android:id="@+id/Restaurant1Type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="5dp"
+                        android:text="American"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="normal"
+                        app:fontFamily="@font/open_sans"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Restaurant1Text" />
 
-        <ImageView
-            android:id="@+id/imageView11"
-            android:layout_width="413dp"
-            android:layout_height="150dp"
-            android:layout_marginTop="80dp"
-            android:src="@drawable/discountburger"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.002" />
+                    <TextView
+                        android:id="@+id/Restaurant1Distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:text="0.3 mi away"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:textStyle="normal"
+                        app:fontFamily="@font/open_sans"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/Restaurant1Type" />
 
-        <ImageView
-            android:id="@+id/DollarSigns"
-            android:layout_width="67dp"
-            android:layout_height="22dp"
-            android:layout_marginTop="240dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginRight="4dp"
-            android:src="@drawable/dollarsigns"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                    <ImageView
+                        android:id="@+id/imageView11"
+                        android:layout_width="413dp"
+                        android:layout_height="150dp"
+                        android:layout_marginTop="80dp"
+                        android:src="@drawable/discountburger"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.002" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <ImageView
+                        android:id="@+id/DollarSigns"
+                        android:layout_width="67dp"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="240dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:src="@drawable/dollarsigns"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-</FrameLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </LinearLayout>
+
+</ScrollView>

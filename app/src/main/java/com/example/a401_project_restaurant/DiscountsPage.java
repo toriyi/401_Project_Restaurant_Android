@@ -41,6 +41,7 @@ public class DiscountsPage extends AppCompatActivity {
 
                 switch(menuItem.getItemId()){
                     case R.id.navigation_discountpage:
+                        System.out.println("QUEING UP DISCOUNTS PAGE!!!");
                         InitializeFragment(discountsPageFragment);
                         return true;
 
