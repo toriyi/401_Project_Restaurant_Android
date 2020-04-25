@@ -186,7 +186,10 @@ public class MapPageFragment extends Fragment implements OnMapReadyCallback{
                             int i = 1;
                             for (QueryDocumentSnapshot document : task.getResult()) {
 //                                Log.d(TAG, document.getId() + " => " + document.getData());
-                                IconGenerator iconFactory = new IconGenerator(getActivity().getApplicationContext());
+                                if(getContext() == null){
+                                    System.out.println("context is null!!!");
+                                }
+                                IconGenerator iconFactory = new IconGenerator(getContext());
                                 Map<String, Object> restaurantInfo = document.getData();
                                 marker = new LatLng((Double)restaurantInfo.get("latitude"), (Double)restaurantInfo.get("longitude"));
 //                                markers.add(marker);
