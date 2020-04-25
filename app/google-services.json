@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "417632906047",
+    "firebase_url": "https://project-restau.firebaseio.com",
+    "project_id": "project-restau",
+    "storage_bucket": "project-restau.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417632906047:android:f268aa0dab41e8b1fcc18a",
+        "android_client_info": {
+          "package_name": "com.example.a401_project_restaurant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417632906047-06p2otcmpvtqllptfiag969tuh14vj6s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBJeCxLdkkcSwLUhTyCru4RVqyflQnolw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417632906047-06p2otcmpvtqllptfiag969tuh14vj6s.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "417632906047-50qbjqfhrk8jon4p9pq84tq9fmeurj2r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "ProjectRestaurant"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
