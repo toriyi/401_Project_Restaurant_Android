@@ -44,7 +44,7 @@
         app:layout_constraintVertical_bias="0.804" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nameTitleText"
         android:layout_width="160dp"
         android:layout_height="36dp"
         android:layout_marginStart="8dp"
@@ -64,7 +64,7 @@
         app:layout_constraintVertical_bias="0.686" />
 
     <Switch
-        android:id="@+id/switch1"
+        android:id="@+id/locationServicesSwitch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

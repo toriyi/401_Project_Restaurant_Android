@@ -22,6 +22,8 @@ public class Login extends AppCompatActivity {
     private EditText emailU, passwordU;
     private Button loginBtn;
     private FirebaseAuth mAuth;
+    private FirebaseLoader firebaseLoader = FirebaseLoader.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,8 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         initializeUI();
+
+        firebaseLoader.loadRestaurants();
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +46,7 @@ public class Login extends AppCompatActivity {
 
     private void loginUserAccount() {
 
-        String email, password;
+        final String email, password;
         email = emailU.getText().toString();
         password = passwordU.getText().toString();
 
@@ -62,7 +66,8 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
-                            Intent intent = new Intent(Login.this, ResInfo.class);
+                            firebaseLoader.loadUser(email, password.length());
+                            Intent intent = new Intent(Login.this, DiscountsPage.class);
                             startActivity(intent);
                         }
                         else {

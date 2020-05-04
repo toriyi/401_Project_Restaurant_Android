@@ -16,9 +16,9 @@ public class DiscountsPage extends AppCompatActivity {
 
     //Fragments:
     private DiscountsPageFragment discountsPageFragment;
-//    private FavoritesFragment favoritesFragment;
     private MapPageFragment mapPageFragment;
     private UserAccountFragment userAccountFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,9 +29,10 @@ public class DiscountsPage extends AppCompatActivity {
 
         //fragment initialization
         discountsPageFragment = new DiscountsPageFragment();
-//        favoritesFragment = new FavoritesFragment();
         mapPageFragment = new MapPageFragment();
         userAccountFragment = new UserAccountFragment();
+
+        InitializeFragment(discountsPageFragment);
 
         navigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -41,17 +42,12 @@ public class DiscountsPage extends AppCompatActivity {
 
                 switch(menuItem.getItemId()){
                     case R.id.navigation_discountpage:
-                        System.out.println("QUEING UP DISCOUNTS PAGE!!!");
                         InitializeFragment(discountsPageFragment);
                         return true;
 
                     case R.id.navigation_mappage:
                         InitializeFragment(mapPageFragment);
                         return true;
-
-//                    case R.id.navigation_favoritespage:
-//                        InitializeFragment(favoritesFragment);
-//                        return true;
 
                     case R.id.navigation_useraccountpage:
                         InitializeFragment(userAccountFragment);
