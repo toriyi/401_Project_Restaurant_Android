@@ -3,6 +3,7 @@ package com.example.a401_project_restaurant;
 import androidx.annotation.NonNull;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -17,7 +18,8 @@ public class FirebaseLoader {
 
     private static FirebaseLoader instance = null;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
-    final private ArrayList<Restaurant> restaurants;
+    final private ArrayList<Restaurant> allRestaurants;
+    final private ArrayList<Restaurant> restaurantsWithDiscount;
     final private User user;
 
     //to be used later to implement customer vs. restaurant log in
@@ -28,7 +30,8 @@ public class FirebaseLoader {
     {
         //initialize variables the different fragments will be accessing to get
         //restaurant and user data
-        restaurants = new ArrayList<Restaurant>();
+        allRestaurants = new ArrayList<Restaurant>();
+        restaurantsWithDiscount = new ArrayList<Restaurant>();
         user = new User();
         currRestaurant = new Restaurant();
     }
@@ -54,20 +57,22 @@ public class FirebaseLoader {
                                 Map<String, Object> restaurantInfo = document.getData();
                                 Restaurant currRestaurant = new Restaurant();
 
-                                //if the restaurant has an active discount
+                                 //load restaurant data
+                                 currRestaurant.setName((String)restaurantInfo.get("name"));
+                                 currRestaurant.setDescription((String)restaurantInfo.get("description"));
+                                 currRestaurant.setRating(((Number)restaurantInfo.get("ratings")).doubleValue());
+                                 currRestaurant.setDiscountAmount(((Number)restaurantInfo.get("discountAmt")).intValue());
+                                 currRestaurant.setEmail((String) restaurantInfo.get("email"));
+                                 currRestaurant.setDiscountActive((Boolean)restaurantInfo.get("discountActive"));
+                                 currRestaurant.setReservationSpots(((Number)restaurantInfo.get("reservationSpots")).intValue());
+                                 currRestaurant.setTimestamp((Timestamp)restaurantInfo.get("discountEndTime"));
+                                 currRestaurant.setUid(document.getId());
+
+                                 allRestaurants.add(currRestaurant);
+
+                                 //if the restaurant has an active discount
                                 if((Boolean)restaurantInfo.get("discountActive") == true){
-
-                                     //load restaurant data
-                                     currRestaurant.setName((String)restaurantInfo.get("name"));
-                                     currRestaurant.setDescription((String)restaurantInfo.get("description"));
-                                     currRestaurant.setRating(((Number)restaurantInfo.get("ratings")).doubleValue());
-                                     currRestaurant.setDiscountAmount(((Number)restaurantInfo.get("discountAmt")).intValue());
-                                     currRestaurant.setEmail((String) restaurantInfo.get("email"));
-                                     currRestaurant.setDiscountActive((Boolean)restaurantInfo.get("discountActive"));
-                                     currRestaurant.setReservationSpots(((Number)restaurantInfo.get("reservationSpots")).intValue());
-                                     currRestaurant.setTimestamp((Timestamp)restaurantInfo.get("discountEndTime"));
-                                    restaurants.add(currRestaurant);
-
+                                     restaurantsWithDiscount.add(currRestaurant);
                                 }
 
                             }
@@ -76,12 +81,13 @@ public class FirebaseLoader {
                     }
                 });
 
-        return restaurants;
+        return restaurantsWithDiscount;
     }
 
     public String loadUser(String email, int passwordLength){
 
         final String passableEmail = email;
+
         db.collection("users")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -104,14 +110,25 @@ public class FirebaseLoader {
                         }
                     }
                 });
+        user.setUserType("customer");
+
+        for(int i = 0; i < restaurantsWithDiscount.size(); i++){
+            Restaurant restaurant = restaurantsWithDiscount.get(i);
+            //if user is the user we are currently looking for
+            if(restaurant.getEmail().equals(email)){
+                user.setUid(restaurant.getUid());
+                user.setName(restaurant.getName());
+                user.setUserType("restaurant");
+            }
+        }
 
         user.setEmail(email);
         user.setPasswordLength(passwordLength);
-        return "user";
+        return user.getUserType();
     }
 
-    public ArrayList<Restaurant> getRestaurants(){
-        return restaurants;
+    public ArrayList<Restaurant> getRestaurantsWithDiscount(){
+        return restaurantsWithDiscount;
     }
 
     public User getUser(){

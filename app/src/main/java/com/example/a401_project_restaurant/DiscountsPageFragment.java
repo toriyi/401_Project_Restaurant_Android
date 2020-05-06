@@ -40,7 +40,7 @@ public class DiscountsPageFragment extends Fragment {
 
 
     public DiscountsPageFragment() {
-        restaurants = firebaseLoader.getRestaurants();
+        restaurants = firebaseLoader.getRestaurantsWithDiscount();
 
     }
 

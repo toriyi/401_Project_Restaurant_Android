@@ -8,6 +8,7 @@ public class User {
     private String phoneNumber;
     private Boolean locationServicesEnabled;
     private String uid;
+    private String userType;
 
     public User(){
         this.name = "";
@@ -15,6 +16,7 @@ public class User {
         this.passwordLength = 0;
         this.phoneNumber = "";
         this.locationServicesEnabled = false;
+        this.userType = "";
     }
 
     public User(String name, int passwordLength, String email, String phoneNumber, Boolean locationServicesEnabled){
@@ -53,6 +55,10 @@ public class User {
         return this.uid;
     }
 
+    public String getUserType() {
+        return this.userType;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -75,6 +81,10 @@ public class User {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
 }
