@@ -66,8 +66,16 @@ public class Login extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
-                            firebaseLoader.loadUser(email, password.length());
-                            Intent intent = new Intent(Login.this, DiscountsPage.class);
+                            Intent intent = null;
+                            String userType = firebaseLoader.loadUser(email, password.length());
+
+                            if(userType.equals("customer"))
+                            {
+                                intent = new Intent(Login.this, DiscountsPage.class);
+                            }else if(userType.equals("restaurant")){
+                                intent = new Intent(Login.this, DiscountCreationPage.class);
+                            }
+
                             startActivity(intent);
                         }
                         else {

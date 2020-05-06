@@ -15,6 +15,7 @@ public class Restaurant {
     private String name;
     private Double rating;
     private int reservationSpots;
+    private String uid;
     private String[] tags;
 
     public Restaurant(){
@@ -43,6 +44,14 @@ public class Restaurant {
 
     public Double getRating() {
         return rating;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
+    }
+
+    public String getUid() {
+        return uid;
     }
 
     public void setDiscountAmount(int discountAmount) {

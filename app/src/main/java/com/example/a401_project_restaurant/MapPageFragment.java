@@ -58,7 +58,7 @@ public class MapPageFragment extends Fragment implements OnMapReadyCallback{
 
     public MapPageFragment() {
 
-        restaurants = firebaseLoader.getRestaurants();
+        restaurants = firebaseLoader.getRestaurantsWithDiscount();
     }
 
 

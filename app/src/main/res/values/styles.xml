@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+<!--    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">-->
+<!--        <item name="android:windowBackground">#333</item>-->
+<!--        <item name="colorAccent">#2BF</item>-->
+<!--    </style>-->
+
 </resources>

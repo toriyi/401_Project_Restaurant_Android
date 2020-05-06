@@ -56,8 +56,8 @@ public class UserAccountFragment extends Fragment {
     final private User user;
     private Boolean passwordChanged;
     private FirebaseLoader firebaseLoader = FirebaseLoader.getInstance();
-
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+
     public UserAccountFragment() {
         user = firebaseLoader.getUser();
         passwordChanged = false;
