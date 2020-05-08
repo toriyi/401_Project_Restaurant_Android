@@ -47,9 +47,18 @@
             </intent-filter>
         </activity>
 
-<!--        android:name="android.support.multidex.MultiDexApplication"-->
+        <activity android:name=".RestaurantDiscountDispatch">
+            <intent-filter>
+                <action android:name="android.intent.action.RESTAURANTDISCOUNTDISPATCH" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
+        <!--        android:name="android.support.multidex.MultiDexApplication"-->
         <activity android:name=".DiscountsPage" />
-        <activity android:name=".RestaurantDiscountDispatch" />
+        <!--<activity android:name=".RestaurantDiscountDispatch" />-->
         <activity android:name=".MainActivity">
         </activity>
 

@@ -10,13 +10,22 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class ResInfo extends FragmentActivity{
     int minteger = 0;
     private Button button;
+    private FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser() ;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.resinfo);
 
@@ -32,6 +41,12 @@ public class ResInfo extends FragmentActivity{
 
             }
         });
+
+        if(minteger != 0){
+            DocumentReference restaurantRef = null;
+            restaurantRef = db.collection("restaurants").document(currUser.getUid());
+            restaurantRef.update("reservationSpots", minteger);
+        }
 
     }
 
