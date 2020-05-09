@@ -103,8 +103,8 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="388dp"
-        android:layout_height="228dp"
+        android:layout_width="327dp"
+        android:layout_height="183dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -113,13 +113,13 @@
         android:maxWidth="60dp"
         android:maxHeight="60dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/pixiedeli"
+        android:src="@drawable/burger"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.533"
+        app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.236" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/textView9"

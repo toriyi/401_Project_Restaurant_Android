@@ -12,6 +12,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class ResInfo extends Fragment {
@@ -27,6 +31,10 @@ public class ResInfo extends Fragment {
         this.previousFragment = passedPreviousFragment;
         this.currRestaurant = passedRestaurant;
     }
+    private FirebaseUser currUser = FirebaseAuth.getInstance().getCurrentUser() ;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,6 +59,12 @@ public class ResInfo extends Fragment {
 
             }
         });
+
+        if(minteger != 0){
+            DocumentReference restaurantRef = null;
+            restaurantRef = db.collection("restaurants").document(currUser.getUid());
+            restaurantRef.update("reservationSpots", minteger);
+        }
 
         //when user clicks on back arrow
         backArrow.setOnClickListener(new View.OnClickListener(){
