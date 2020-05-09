@@ -17,6 +17,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 
 public class ResInfo extends Fragment {
     int minteger = 0;
@@ -25,6 +28,10 @@ public class ResInfo extends Fragment {
     private String previousFragment; //variable so application knows which fragment to return to after reservation made
     private TextView displayInteger;
     private Restaurant currRestaurant; //the restaurant whose details are currently being displayed
+    private TextView restaurantTitleResInfo;
+    private TextView restaurantDescripResInfo;
+    private TextView discountAmtResInfo;
+    private TextView discountExpiration;
 
 
     public ResInfo (String passedPreviousFragment, Restaurant passedRestaurant){
@@ -47,6 +54,18 @@ public class ResInfo extends Fragment {
         button = resInfo.findViewById(R.id.button2);
         displayInteger = resInfo.findViewById(R.id.textView21);
         backArrow = resInfo.findViewById(R.id.backArrow);
+        restaurantTitleResInfo = resInfo.findViewById(R.id.textView8);
+        restaurantDescripResInfo = resInfo.findViewById(R.id.textView10);
+        discountAmtResInfo = resInfo.findViewById(R.id.textView12);
+        discountExpiration = resInfo.findViewById(R.id.textView19);
+
+        restaurantTitleResInfo.setText(currRestaurant.getName());
+        restaurantDescripResInfo.setText(currRestaurant.getDescription());
+        discountAmtResInfo.setText(currRestaurant.getDiscountAmount() + "% off");
+
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM-dd-yy hh:mm aa");
+        discountExpiration.setText("Expires: " + simpleDateFormat.format(currRestaurant.getTimestamp().toDate()));
+
 
         //when user clicks on button
         button.setOnClickListener(new OnClickListener() {
