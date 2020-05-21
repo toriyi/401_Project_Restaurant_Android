@@ -93,7 +93,7 @@
                 android:maxWidth="60dp"
                 android:maxHeight="60dp"
                 android:scaleType="fitCenter"
-                android:src="@drawable/burger"
+                android:src="@drawable/dulce"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 

@@ -35,7 +35,7 @@ public class DiscountsPageFragment extends Fragment {
     ListView listView;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     ArrayList<Restaurant> restaurants;
-    private int[] imgs = {R.drawable.greenleafgourmetchopshop, R.drawable.dulce, R.drawable.cava, R.drawable.honeybird};
+    private int[] imgs = {R.drawable.dulce, R.drawable.cava, R.drawable.honeybird};
     private FirebaseLoader firebaseLoader = FirebaseLoader.getInstance();
 
 
